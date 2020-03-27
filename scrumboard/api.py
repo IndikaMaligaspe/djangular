@@ -1,12 +1,12 @@
-from rest_framework.generics import ListAPIView
+from rest_framework.viewsets import ModelViewSet
 
 from .serializers import ListSerializer, CardSerializer
 from .models import LIst, Card
 
-class ListApi(ListAPIView):
+class ListViewSet(ModelViewSet):
     queryset = LIst.objects.all()
     serializer_class = ListSerializer
 
-class CardApi(ListAPIView):
+class CardViewSet(ModelViewSet):
     queryset = Card.objects.all()
     serializer_class = CardSerializer
