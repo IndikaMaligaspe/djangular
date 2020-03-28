@@ -60,3 +60,7 @@ ul {
 .flex button {
     flex-basis: inherit;
 }
+
+.logout {
+    float: right;
+}

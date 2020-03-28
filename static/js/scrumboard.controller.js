@@ -1,6 +1,6 @@
 (function(){
     'use strict';
-    angular.module('scrumboard.demo', [])
+    angular.module('scrumboard.demo', ['ngRoute'])
     .controller('ScrumboardController', ['$scope', '$http',  ScrumboardController]);
 
     function ScrumboardController($scope, $http){
@@ -18,6 +18,13 @@
               });
           
         };
+
+        $scope.logout = function(){
+          $http.get('/auth_api/logout/')
+          .then(function () {
+             $location.url('/login') 
+          });
+        } 
         $scope.data = [];
         $http.get('http://127.0.0.1:8000/scrumboard/lists').then(function(response){
             $scope.data = response.data;
