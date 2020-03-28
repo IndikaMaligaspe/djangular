@@ -12,7 +12,7 @@
                 function ($scope, $http){
                     var url = '/scrumboard/cards/'+ $scope.card.id +'/';
                     $scope.update = function() {
-                        alert(url);
+                        // alert(url);
                         $http.put (
                             url,
                             $scope.card
@@ -23,7 +23,7 @@
                         $http.delete(url).then(
                             function(){
                                 var cards = $scope.list.cards;
-                                alert(cards)
+                                // alert(cards)
                                 cards.splice(
                                     cards.indexOf($scope.card),
                                     1
