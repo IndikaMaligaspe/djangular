@@ -3,11 +3,11 @@
 
     angular
         .module('scrumboard.demo')
-        .controller('LoginController', ['$scope', '$location', '$http', LoginController]);
+        .controller('LoginController', ['$scope', '$location', 'Login', LoginController]);
 
-    function LoginController($scope, $location, $http) {
+    function LoginController($scope, $location, Login) {
         $scope.login = function () {
-            $http.post('/auth_api/login/', $scope.user)
+            Login.login($scope.user)
                 .then(function () {
                         $location.url('/');
                     },
@@ -19,9 +19,9 @@
         // activate();
 
         // function activate() {
-        //     if (Login.isLoggedIn()) {
-        //         $location.url('/');
-        //     }
+            if (Login.isLoggedIn()) {
+                $location.url('/');
+            }
         // }
     }
 
