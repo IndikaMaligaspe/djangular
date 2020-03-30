@@ -1,16 +1,18 @@
 <form ng-submit="login()">
-    <div style="color: red">{{ login_error }}</div>
-    <div>
-        <label>Username</label>
-        <input type="text" ng-model="user.username"/>
-    </div>
+    <div class="loginform">
+        <div style="color: red">{{ login_error }}</div>
+        <div  class="input">
+            <label class="label">Username:&nbsp;</label>
+            <input class="type" type="text" ng-model="user.username"/>
+        </div>
 
-    <div>
-        <label>Password</label>
-        <input type="password" ng-model="user.password"/>
-    </div>
-
-    <div>
-        <button type="submit">Submit</button>
+        <div class="input">
+            <label  class="label">Password&nbsp;:&nbsp;</label>
+            <input  class="type" type="password" ng-model="user.password"/>
+        </div>
+        <br>
+        <div  class="submit">
+            <button type="submit">Submit</button>
+        </div>
     </div>
 </form>

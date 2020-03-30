@@ -1,6 +1,7 @@
 html {
     font-size: 1em;
     line-height: 1.4;
+    background-color: rgba(30, 171, 196, 0.726);
 }
 
 .list {
@@ -63,4 +64,45 @@ ul {
 
 .logout {
     float: right;
+}
+
+/* loginform styles...  */
+
+.loginform{
+    /* border: solid 1px; */
+    position: relative;
+    margin-top: 10%;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 10px;
+    height: 100px;
+    background-color: #afd9e4;
+}
+
+.loginform .input{
+    /* border:#2a9fbc solid 1px ; */
+    position: relative;
+    margin-top: 1%;
+    padding: 1px;
+}
+
+
+.loginform .input .label {
+    /* border: #404040 solid 1px; */
+    position: relative;
+    margin-right: 10%;    
+    width: 100px;
+}
+
+.loginform .input .type {
+    /* border: #404040 solid 1px; */
+    position: relative;
+    width: 200px;
+    margin-right: 2px;
+}
+
+.loginform .submit {
+    float: right;
+    margin-right: 3px;
+    padding: 1px;
 }
