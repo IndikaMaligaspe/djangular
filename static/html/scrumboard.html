@@ -2,14 +2,16 @@
     <button ng-click="logout()">Logout</button>
 </div>    
 <div class="list" ng-repeat="list in data">
-    <h3>{{ list.name }}</h3>
+    <h3 class="list_head">{{ list.name }}</h3>
+    <div class="flex">
+        <!-- <input type="label" ng-model="new_title"></label -->
+        <span  class="add_card" ng-click="addCard()">+</span>
+        <!-- <button ng-click="add(list, new_title)">+</button> -->
+        
+    </div>
     <ul>
         <li  ng-repeat="card in list.cards">
             <scrumboard-card></scrumboard-card>
         </li>
     </ul>
-    <div class="flex">
-        <input type="text" ng-model="new_title"/>
-        <button ng-click="add(list, new_title)">+</button>
-    </div>
 </div>

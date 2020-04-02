@@ -9,6 +9,7 @@
               list: list.id,
               title: title
           };
+
           $http.post('/scrumboard/cards/',card).then(
               function(response){
                 list.cards.push(card);
@@ -17,6 +18,10 @@
                 alert('Could not create card');
               });
           
+        };
+
+        $scope.addCard = function(){
+          alert("Inside add_card");
         };
 
         Login.redirectIfNotLoggedIn();

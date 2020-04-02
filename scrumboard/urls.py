@@ -1,13 +1,17 @@
 from rest_framework.routers import DefaultRouter
-
+from django.conf.urls import url, include
 from .api import ListViewSet, CardViewSet
+
+from . import views
 
 router = DefaultRouter()
 router.register(r'lists', ListViewSet)
 router.register(r'cards', CardViewSet)
-
-urlpatterns = router.urls
-
+# router.register(r'cardInfo', views.cardInfo)
+urlpatterns = [
+        url(r'^cardInfo/(?P<id>\w+)/$', views.cardInfo),
+        url(r'^', include(router.urls)),
+    ]
 # urlpatterns = [
 #     url(r'^lists$', ListApi.as_view()),
 #     url(r'^cards$', CardApi.as_view()),
