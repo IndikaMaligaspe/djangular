@@ -139,7 +139,7 @@ html {
 }
 
 .cardinfo {
-    width: 500px; 
+    width: 800px; 
     height:400px; 
     /* border: 1px solid black;  */
     float: inline-end;
@@ -150,9 +150,18 @@ html {
     font-size: 12px ;
     font-weight: light;
     margin: 2px;
+    text-align: left;
 
 }
 
+.cardinfo_maintab tr td {
+   text-align: left;
+}
+
+.cardinfo_maintab tr td input {
+    border: 0px;
+ }
+ 
 .cardinfor_lefttab{
     float:left;
     width: 20%;

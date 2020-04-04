@@ -18,7 +18,7 @@ class Card(models.Model):
     list = models.ForeignKey(LIst, related_name= "cards", on_delete=models.CASCADE)
     story_points = models.IntegerField(null=True, blank=True)
     business_value = models.IntegerField(null=True, blank=True)
-    due_date = models.DateField(auto_now=[...],null=True)
+    due_date = models.DateField(null=True)
     priority = models.CharField(max_length=100, null=True)
     project = models.CharField(max_length=200, null=True)
 

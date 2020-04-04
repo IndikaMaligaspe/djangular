@@ -9,7 +9,7 @@ router.register(r'lists', ListViewSet)
 router.register(r'cards', CardViewSet)
 # router.register(r'cardInfo', views.cardInfo)
 urlpatterns = [
-        url(r'^cardInfo/(?P<id>\w+)/$', views.cardInfo),
+        url(r'^cardInfo/(?P<id>\w+)/$', views.card_info_view),
         url(r'^', include(router.urls)),
     ]
 # urlpatterns = [

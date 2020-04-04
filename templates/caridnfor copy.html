@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css"
+              href="{% static "css/scrumboard.css" %}" >
+    </head>    
+    <body>
+       <div class="cardinfo">
+        <div><h3> {{ cards.title }} </h3></div> 
+        <div class="cardinfo_maintab" >
+            <div class="cardinfor_lefttab"><label>Project</label></div>
+            <div class="cardinfor_righttab"><input type=text name="project" value="{{ cards.project }}"></input></div>
+        </div>
+        <br>
+        <div class="cardinfo_maintab">
+            <div class="cardinfor_lefttab"><label>story point</label></div>
+            <div class="cardinfor_righttab"><select name="story_points" >
+            {% with '1 2 3 4 5' as list %}
+                {% for i in list.split %}
+                    <option value={{i}}> {{i}}</option>
+                {% endfor %}
+            {% endwith %}      
+            </select></div>
+        </div> 
+        <div class="cardinfo_maintab">
+            <div class="cardinfor_lefttab"><label>Busness Value</label></div>
+            <div class="cardinfor_righttab"><select name="bussines_points" >
+                    {% for i in bussines_points %}
+                        <option value={{i}}> {{i}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div> 
+        <div class="cardinfo_maintab">
+            <div class="cardinfor_lefttab"><label>Due Date</label></div>
+            <div class="cardinfor_righttab"><label>{{ cards.due_date }}</label></div>
+        </div> 
+        <div class="cardinfo_maintab">
+            <div class="cardinfor_lefttab"><label>Priority</label></div>
+            <div class="cardinfor_righttab">
+                <select name="bussines_points" >
+                    {% with '- high medium low' as list %}
+                        {% for i in list.split %}
+                            <option value={{i}}> {{i}}</option>
+                        {% endfor %}
+                    {% endwith %}      
+                    </select>
+
+            </div>
+        </div> 
+        <div class="cardinfo_maintab">
+            <div class="cardinfor_lefttab"><label>Description</label></div>
+            <div class="cardinfor_righttab">
+                <p id="description" contenteditable="true">{{ cards.description }}</p> 
+                <!-- <textarea name="description" value="{{ cards.description }}"></textarea>-->
+            </div>
+        </div>
+     </div>
+    </body>
+
+</html>
